@@ -1,0 +1,38 @@
+<!--Homepage-->
+<div class="outer-container">
+    <div class="jumbotron jumbo-nyt">
+      <div class="container">
+      </div>
+    </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          {{#if article}}
+              {{#each article}}
+              <div class="panel panel-primary">
+                  <div class="panel-heading heading">
+                      <h4>{{this.title}}</h4>
+                  </div>
+                  <div class="panel-body">
+                      <p> {{this.summary}}</p>
+
+                      <!-- <a  href={{this.link}} target="_blank">{{this.link}}""View Articles</a> -->
+                      <a target="_blank" href="{{this.link}}" class="btn btn-success view ">View Articles</a>
+
+                      <!-- <button type="button" class="btn btn-success scrape" data-id={{this.link}}>Scrape Article</button> -->
+                      <br><br>
+                      <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+                  </div>
+              </div>
+              {{/each}}
+          {{else}}
+          <div class="panel panel-default">
+              <div class="panel-body">
+              <h4>Sorry! No new articles for now but try again later.</h4>
+              </div>
+           </div>
+          {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
